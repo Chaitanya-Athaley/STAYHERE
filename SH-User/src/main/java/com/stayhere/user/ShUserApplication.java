@@ -3,7 +3,7 @@ package com.stayhere.user;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//import com.stayhere.common.SuccessCodes;
+import com.stayhere.common.SuccessCodes;
 
 @SpringBootApplication
 public class ShUserApplication {
