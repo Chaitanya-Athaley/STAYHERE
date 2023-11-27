@@ -11,7 +11,7 @@ public class ShUserApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShUserApplication.class, args);
 //		String codeMessage = SuccessCodes.getCodeMessage("202");
-		System.out.println("----codeMessa ge");
+		System.out.println("----codeMessage");
 	}
 
 }
