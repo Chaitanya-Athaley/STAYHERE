@@ -16,6 +16,7 @@
 		<module>../SH-common</module>
 		<module>../SH-User</module>
 		<module>../SH-Dao</module>
+		<module>../SH-Hotel-Service</module>
 	</modules>
 	<dependencies>
 		<dependency>
