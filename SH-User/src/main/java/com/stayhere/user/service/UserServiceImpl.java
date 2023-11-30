@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.stayhere.user.entity.UserEntity;
-import com.stayhere.user.model.UserDto;
+import com.stayhere.user.dto.UserDto;
 import com.stayhere.user.repository.UserRepository;
 import com.stayhere.user.service.interfaces.UserService;
 

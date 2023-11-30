@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stayhere.user.model.UserDto;
+import com.stayhere.user.dto.UserDto;
 import com.stayhere.user.service.interfaces.UserService;
 
 @RestController
