@@ -3,6 +3,8 @@ package com.stayhere.hotel.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,4 +30,9 @@ public class HotelController {
 		return new ResponseEntity<HotelDto>(saveHotel, HttpStatus.CREATED);
 	}
 	
+	@GetMapping("{hotel-code}")
+	public ResponseEntity<HotelDto> getHotelByCode(@PathVariable("hotel-code") String hotelCode){
+		HotelDto hotelDto = hotelSerevice.getHotelByCode(hotelCode);
+		return new ResponseEntity<HotelDto>(hotelDto,HttpStatus.OK);
+	}
 }
