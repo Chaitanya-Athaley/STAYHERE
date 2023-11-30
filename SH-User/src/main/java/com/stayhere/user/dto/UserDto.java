@@ -1,4 +1,4 @@
-package com.stayhere.user.model;
+package com.stayhere.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
