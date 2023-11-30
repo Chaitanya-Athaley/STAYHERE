@@ -42,4 +42,15 @@ public class HotelServicesImpl implements HotelSerevice{
 		return savedHotelDto;
 	}
 
+	/**
+	 * getHotelByCode by Hotel code
+	 *
+	 */
+	@Override
+	public HotelDto getHotelByCode(String hotelCode) {
+		HotelEntity hotel = hotelRepo.findByHotelCode(hotelCode);
+		HotelDto hotelDto = new HotelDto(hotel.getId(), hotel.getHotelName(), hotel.getHotelDescription(), hotel.getHotelCode(), hotel.getHotelCity());
+		return hotelDto;
+	}
+
 }
