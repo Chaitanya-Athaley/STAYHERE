@@ -1,5 +1,7 @@
 package com.stayhere.hotel.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +36,11 @@ public class HotelController {
 	public ResponseEntity<HotelDto> getHotelByCode(@PathVariable("hotel-code") String hotelCode){
 		HotelDto hotelDto = hotelSerevice.getHotelByCode(hotelCode);
 		return new ResponseEntity<HotelDto>(hotelDto,HttpStatus.OK);
+	}
+	
+	@GetMapping("/city/{city}")
+	public ResponseEntity<List<HotelDto>> getHotelByCity(@PathVariable("city") String city){
+		List<HotelDto> hotels = hotelSerevice.getHotelByCityName(city);
+		return new ResponseEntity<>(hotels, HttpStatus.OK);
 	}
 }

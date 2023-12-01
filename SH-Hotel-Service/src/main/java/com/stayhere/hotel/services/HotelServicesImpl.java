@@ -1,11 +1,15 @@
 package com.stayhere.hotel.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import com.stayhere.hotel.dto.HotelDto;
 import com.stayhere.hotel.entity.HotelEntity;
 import com.stayhere.hotel.repository.HotelRepo;
 import com.stayhere.hotel.services.interfaces.HotelSerevice;
+import com.stayhere.utility.CommonUtil;
 
 import lombok.AllArgsConstructor;
 
@@ -51,6 +55,16 @@ public class HotelServicesImpl implements HotelSerevice{
 		HotelEntity hotel = hotelRepo.findByHotelCode(hotelCode);
 		HotelDto hotelDto = new HotelDto(hotel.getId(), hotel.getHotelName(), hotel.getHotelDescription(), hotel.getHotelCode(), hotel.getHotelCity());
 		return hotelDto;
+	}
+
+	/**
+	 *getHotelByCityName
+	 */
+	@Override
+	public List<HotelDto> getHotelByCityName(String city) {
+		List<HotelEntity> hotels = hotelRepo.findByHotelCity(city);
+		List<HotelDto> hotelsDto = hotels.stream().map(CommonUtil::convertHotelEntitytoHotelDto).collect(Collectors.toList());
+		return hotelsDto;
 	}
 
 }
